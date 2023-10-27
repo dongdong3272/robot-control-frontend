@@ -48,10 +48,14 @@ Please follow the instructions below to set up your frontend system locally:
    npm install
    ```
 3. Start running the frontend:
+
    ```sh
    npm start
    ```
+
    Note that before running the frontend, please start the backend server first. To start the backend server, please read the manual in the backend project.
+
+   Once the frontend is up and running, you can access the user interface by opening your web browser and navigating to http://localhost:3000/.
 
 ### Test
 
