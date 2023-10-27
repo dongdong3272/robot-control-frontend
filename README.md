@@ -17,6 +17,8 @@
 
 ![Frontend Screenshot][frontend-screenshot]
 
+This project is minimalistic web-based application for controlling a simulated robot. And this repository is the frontend part. It is a responsive and intuitive control panel for the robot. It adopts modern design principles to create an engaging and easy-to-use interface.
+
 ### Built With
 
 - [![HTML][HTML]][HTML-url]
@@ -37,49 +39,46 @@ Please follow the instructions below to set up your frontend system locally:
 
 ### Running
 
-1. Clone the repo
+1. Clone the repo:
    ```sh
-   git clone
+   git clone https://github.com/dongdong3272/robot-control-frontend.git
    ```
-2. Open the project using IntelliJ or equivalent IDEs and run the project
-3. Or run the following command in the root directory:
+2. Run the following command in the root directory:
    ```sh
-   mvn clean javafx:run
+   npm install
    ```
-4. Or run the executable jar file using the following command in the root directory:
+3. Start running the frontend:
    ```sh
-   mvn clean package
+   npm start
    ```
+   Note that before running the frontend, please start the backend server first. To start the backend server, please read the manual in the backend project.
+
+### Test
+
+1. There are 11 standard tests provided in App.test.js file. They focus on the UI component display and the communication from the frontend to the server. For the server-side test, please check the backend project. The following command shows how to run the test:
+   ```sh
+   npm test
    ```
-   java --module-path [your own javafx lib path] --add-modules javafx.controls,javafx.fxml -jar target/VisualNeo-1.0.0.jar
-   ```
-   JavaFX is separated from JDK 11+ and needed to installed independently by users. To download JavaFX, click [here](https://gluonhq.com/products/javafx/). Use the path of lib directory as your command line input.
 
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
-Here is a quick guideline of how the system can be used.
+Here is a quick guideline of how the system can be used. There are many controls on the panel as follows:
 
-1. Load the remote or local database by providing security data (uri, username, password)
-   ![Load Database Screen Shot][load-database-screenshot]
-2. View the metadata of the loaded database
-   ![Database Metadata Screen Shot][database-metadata-screenshot]
-3. Construct graph queries by pressing:
+1. Emergency Button: Click to initiate an emergency call, suspending all robot functions and locking the frontend UI.
 
-   **Shift**: Create nodes/edges
+2. Lock/Unlock Button: Click to toggle robot lock/unlock status. When locked, only map navigation is allowed.
 
-   **Ctrl**: Select multiple nodes/edges
+3. Speed Control: Adjust the robot's speed with buttons above and below the speed display. Speed ranges from 0.3m/s to 1.5m/s.
 
-   **Backspace/Delete**: Delete nodes/edges
+4. Pick Up Button: Click to instruct the robot to pick up products.
 
-4. Save/Load self-defined patterns (if needed)
-5. Load the recommended patterns from file (if needed)
-   ![Load Recommended Pattern Screen Shot][load-pattern-screenshot]
-6. Fire the search and view the returned results
-   ![Display Result Screen Shot][display-result-screenshot]
+5. Drop Off Button: Click to instruct the robot to drop off products.
 
-_For more examples, please refer to the manual._
+6. Handler: Simulates a physical control handle, enabling 360-degree control of the robot's movement. Click and drag the white inner handler with the mouse to operate.
+
+7. Map: Utilizes the Google Maps API to mimic the digital screen on the robot control platform. In practice, it may represent a 2D building scan or similar smaller-scale maps.
 
 <!-- CONTACT -->
 
